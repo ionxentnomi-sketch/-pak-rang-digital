@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075b35">
+  <meta name="description" content="پاک رنگ ڈیجیٹل — لائیو پروگرام، فٹبال ٹورنامنٹس اور ویڈیوز">
+  <title>پاک رنگ ڈیجیٹل | Pak Rang Digital</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <style>
+    :root{--green:#075b35;--deep:#033b24;--lime:#b9e56a;--paper:#f4f8f5;--ink:#15251b}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Noto Nastaliq Urdu",Arial,sans-serif}
+    header{background:linear-gradient(135deg,var(--deep),var(--green));color:white;padding:28px 18px 24px;text-align:center;border-radius:0 0 26px 26px}
+    .logo{width:74px;height:74px;border-radius:22px;background:#fff;color:var(--green);display:grid;place-items:center;font-size:25px;font-weight:900;margin:0 auto 12px;border:3px solid var(--lime)}
+    h1{font-size:25px;margin:5px 0} .sub{margin:0;color:#e0f5e7;font-size:14px}
+    main{max-width:720px;margin:auto;padding:18px}
+    .hero{background:white;border-radius:20px;padding:20px;box-shadow:0 7px 25px #073e2010;margin-top:18px}
+    .hero h2{margin:0 0 8px;font-size:22px;color:var(--green)}
+    .hero p{line-height:1.8;margin:0 0 15px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+    a.btn,button.btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:0;border-radius:14px;padding:15px 12px;background:var(--green);color:white;font-weight:750;font-size:15px;min-height:56px;cursor:pointer}
+    a.btn.secondary,button.btn.secondary{background:white;color:var(--green);border:1px solid #cfe1d5}
+    .live{background:#fff4f2!important;color:#a52323!important;border:1px solid #f2d0ca!important}
+    .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#e22;margin-left:3px}
+    .section-title{font-size:18px;color:var(--green);margin:24px 0 10px}
+    .info{background:#e8f3eb;border-radius:16px;padding:14px;line-height:1.8;font-size:14px}
+    footer{text-align:center;padding:24px 12px;color:#617267;font-size:12px}
+    @media(max-width:390px){.grid{grid-template-columns:1fr} h1{font-size:22px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo" aria-label="PR logo">PR</div>
+  <h1>پاک رنگ ڈیجیٹل</h1>
+  <p class="sub">Pak Rang Digital • لائیو | اسپورٹس | ویڈیوز</p>
+</header>
+<main>
+  <section class="hero">
+    <h2>خوش آمدید!</h2>
+    <p>پاک رنگ ڈیجیٹل کے لائیو پروگرام، فٹبال ٹورنامنٹس اور تازہ ویڈیوز یہاں سے دیکھیں۔ ہماری نشریات اور ویڈیوز یوٹیوب پر دستیاب ہوں گی۔</p>
+    <a class="btn live" href="https://www.youtube.com/@pakrangdigital/live" target="_blank" rel="noopener"><span class="dot"></span> لائیو پروگرام دیکھیں</a>
+    <div class="grid">
+      <a class="btn" href="https://www.youtube.com/@pakrangdigital/videos" target="_blank" rel="noopener">▶ تمام ویڈیوز</a>
+      <a class="btn" href="https://www.youtube.com/@pakrangdigital/shorts" target="_blank" rel="noopener">▣ شارٹس</a>
+      <a class="btn secondary" href="https://www.youtube.com/@pakrangdigital" target="_blank" rel="noopener">▶ یوٹیوب چینل</a>
+      <button class="btn secondary" id="shareBtn">↗ ایپ شیئر کریں</button>
+    </div>
+  </section>
+  <h3 class="section-title">موبائل میں شامل کریں</h3>
+  <div class="info">Chrome میں یہ ویب ایپ کھولیں، اوپر والے مینو (⋮) پر دبائیں، پھر <b>“Add to Home screen”</b> یا <b>“Install app”</b> منتخب کریں۔ اس کے لیے ویب ایپ کا آن لائن لنک ہونا ضروری ہے۔</div>
+  <h3 class="section-title">ہمارے پروگرام</h3>
+  <div class="grid">
+    <a class="btn secondary" href="https://www.youtube.com/@pakrangdigital/live" target="_blank" rel="noopener">⚽ فٹبال لائیو کوریج</a>
+    <a class="btn secondary" href="https://www.youtube.com/@pakrangdigital/videos" target="_blank" rel="noopener">🎬 پرانے پروگرام</a>
+  </div>
+</main>
+<footer>© Pak Rang Digital<br>تمام لائیو نشریات یوٹیوب پر کھلیں گی۔</footer>
+<script>
+  const shareText = "Pak Rang Digital — لائیو پروگرام اور فٹبال کوریج دیکھیں: https://www.youtube.com/@pakrangdigital";
+  document.getElementById('shareBtn').addEventListener('click', async () => {
+    if (navigator.share) {
+      try { await navigator.share({title:'Pak Rang Digital', text:shareText, url:'https://www.youtube.com/@pakrangdigital'}); } catch(e) {}
+    } else if (navigator.clipboard) {
+      try { await navigator.clipboard.writeText(shareText); alert('شیئر کرنے کا متن کاپی ہوگیا۔'); } catch(e) { alert(shareText); }
+    } else { alert(shareText); }
+  });
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  }
+</script>
+</body>
+</html>
